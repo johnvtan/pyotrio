@@ -29,20 +29,22 @@ class Box():
         # center_pos is its center, for drawing circles
         self.rect_color = (0, 0, 0) 
         self.center = None
+        self.rect = None
 
         # for use w/ draw.rect - (left, top, width, height)
-        self.area = (None, None, None, None)
+        #self.area = (None, None, None, None)
         # constants relevant to the box
         self.side_length = 200
         self.line_width = 2 
 
     def init_rect(self, left, top):
-        self.area = (left, top, self.side_length, self.side_length)
+        self.rect = pygame.Rect(left, top, self.side_length, self.side_length)
+        #self.area = (left, top, self.side_length, self.side_length)
         self.center = (left + self.side_length / 2, top - self.side_length / 2)
 
     def draw_box(self, surface):
         ''' function for drawing everything inside the box '''
-        pygame.draw.rect(surface, self.rect_color, self.area, self.line_width)
+        pygame.draw.rect(surface, self.rect_color, self.rect, self.line_width)
         if self.big is True:
             pygame.draw.circle(surface, self.big_color, self.center, self.big_rad, self.line_width)
         if self.med is True:
