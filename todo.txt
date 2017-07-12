@@ -1,0 +1,10 @@
+TO DO:
+- Figure out how to draw the circles and grid correctly
+    - grids characterized by center point would make sense
+    - where should the grid be vs each player's left pieces?
+- Figure out if you should do mouse input or just keyboard
+    - maybe mouse to click on the grid and keyboard to select type of circle?
+
+
+- How do I write test cases for the classes? Or test cases in general?
+    - When I start testing this, it'll be this large messed up blob with a bunch of moving parts that'll all get fucked up
