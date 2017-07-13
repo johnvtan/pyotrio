@@ -1,4 +1,6 @@
 import pygame
+#from board import Sizes
+#from board import Board
 import board
 
 def main():
@@ -11,15 +13,16 @@ def main():
     running = True
 
     print('Initializing board...')
-    game_board = board.Board()
-    test_box = board.Box()
-    test_box.init_rect(100, 500)
+    game_board = board.Board(3)
+    #test_box = board.Box()
+    #test_box.init_rect(100, 500)
     screen.fill((255, 255, 255))
     
-    game_board.update(1, 'med', (255, 0, 0), (1, 1))
-    game_board.update(2, 'big', (0, 255, 0), (0, 0))
-    game_board.update(3, 'small', (0, 0, 255), (2, 1))
+    game_board.update(1, board.Sizes.BIG, (255, 0, 0), (0, 0))
+    game_board.update(1, board.Sizes.BIG, (255, 0, 0), (1, 1))
+    game_board.update(1, board.Sizes.BIG, (255, 0, 0), (2, 2))
     game_board._print_board()
+    print(game_board.check_if_win())
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: running = False
